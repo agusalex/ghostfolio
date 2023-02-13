@@ -7,7 +7,7 @@ import {
   IDataProviderResponse
 } from '@ghostfolio/api/services/interfaces/interfaces';
 import { UNKNOWN_KEY } from '@ghostfolio/common/config';
-import { DATE_FORMAT, isCurrency } from '@ghostfolio/common/helper';
+import {capitalize, DATE_FORMAT, isCurrency} from '@ghostfolio/common/helper';
 import { Granularity } from '@ghostfolio/common/types';
 import { Injectable, Logger } from '@nestjs/common';
 import {
@@ -147,6 +147,10 @@ export class YahooFinanceService implements DataProviderInterface {
             { name: assetProfile.summaryProfile?.sector, weight: 1 }
           ];
         }
+      } else if (assetSubClass === AssetSubClass.CRYPTOCURRENCY) {
+        response.sectors = [
+          { name: capitalize(assetSubClass.toLowerCase()), weight: 1 }
+        ];
       }
 
       const url = assetProfile.summaryProfile?.website;
