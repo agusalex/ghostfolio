@@ -85,8 +85,6 @@ import {
 } from './interfaces/portfolio-position-detail.interface';
 import { PortfolioCalculator } from './portfolio-calculator';
 import { RulesService } from './rules.service';
-import {countries} from "countries-list";
-import {Country} from "@ghostfolio/common/interfaces/country.interface";
 
 const developedMarkets = require('../../assets/countries/developed-markets.json');
 const emergingMarkets = require('../../assets/countries/emerging-markets.json');
@@ -1280,6 +1278,7 @@ export class PortfolioService {
 
     return cashPositions;
   }
+
   private matchCurrencyToCountries(aString: string): Country[] {
     const csformat = []
     switch (aString) {
@@ -1289,6 +1288,7 @@ export class PortfolioService {
     }
     return csformat;
   }
+
   private getDividend({
     activities,
     date = new Date(0),
