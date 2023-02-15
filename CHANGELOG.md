@@ -5,17 +5,39 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## Unreleased
+## 1.234.0 - 2023-02-15
+
+### Added
+
+- Added the data import and export feature to the pricing page
 
 ### Changed
 
+- Copy the logic of `GhostfolioScraperApiService` to `ManualService`
+- Improved the content of the landing page
+- Improved the content of the Frequently Asked Questions (FAQ) page
+- Improved the usability of the _Import Activities..._ action
+- Eliminated the permission `enableImport`
 - Set the exposed port as an environment variable (`PORT`) in `Dockerfile`
+- Migrated the style of `AboutPageModule` to `@angular/material` `15` (mdc)
+- Migrated the style of `BlogPageModule` to `@angular/material` `15` (mdc)
+- Migrated the style of `ChangelogPageModule` to `@angular/material` `15` (mdc)
+- Migrated the style of `ResourcesPageModule` to `@angular/material` `15` (mdc)
 - Upgraded `chart.js` from version `4.0.1` to `4.2.0`
+- Upgraded `ionicons` from version `6.0.4` to `6.1.2`
 - Upgraded `prettier` from version `2.8.1` to `2.8.4`
+- Upgraded `prisma` from version `4.9.0` to `4.10.1`
 
 ### Fixed
 
 - Fixed an issue on the landing page caused by the global heat map of subscribers
+- Fixed the links in the interstitial for the subscription
+
+### Todo
+
+- Remove the environment variable `ENABLE_FEATURE_IMPORT`
+- Rename the `dataSource` from `GHOSTFOLIO` to `MANUAL`
+- Eliminate `GhostfolioScraperApiService`
 
 ## 1.233.0 - 2023-02-09
 
