@@ -5,6 +5,98 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.241.0 - 2023-03-01
+
+### Changed
+
+- Filtered activities with type `ITEM` from search results
+- Considered the user's language in the _Stripe_ checkout
+- Upgraded the _Stripe_ dependencies
+- Upgraded `twitter-api-v2` from version `1.10.3` to `1.14.2`
+
+## 1.240.0 - 2023-02-26
+
+### Added
+
+- Supported a manual currency for the activity unit price
+
+### Fixed
+
+- Fixed the feature graphic of the _Ghostfolio meets Umbrel_ blog post
+
+## 1.239.0 - 2023-02-25
+
+### Added
+
+- Added a blog post: _Ghostfolio meets Umbrel_
+
+### Changed
+
+- Removed the dependency `rimraf`
+
+## 1.238.0 - 2023-02-25
+
+### Added
+
+- Added `COINGECKO` as a new data source type
+- Added support for data provider information to the position detail dialog
+- Added the configuration to publish a `linux/arm/v7` docker image
+- Added _Reddit_ to the _As seen in_ section on the landing page
+- Added _Umbrel_ to the _As seen in_ section on the landing page
+
+### Changed
+
+- Renamed the example environment variable file from `.env` to `.env.example`
+- Upgraded `zone.js` from version `0.11.8` to `0.12.0`
+
+### Fixed
+
+- Fixed `RangeError: Maximum call stack size exceeded` for values of type `Big` in the value redaction interceptor for the impersonation mode
+- Reset the letter spacing in buttons
+
+### Todo
+
+- Ensure that you still have a `.env` file in your project
+
+## 1.237.0 - 2023-02-19
+
+### Added
+
+- Added the support details to the pricing page
+
+### Changed
+
+- Increased the file size limit for the activities import
+- Improved the style of the search results for symbols
+- Migrated the style of `GfHeaderModule` to `@angular/material` `15` (mdc)
+- Upgraded `angular` from version `15.1.2` to `15.1.5`
+- Upgraded `Nx` from version `15.6.3` to `15.7.2`
+
+### Fixed
+
+- Fixed an issue with exact matches in the activities table filter (`VT` vs. `VTI`)
+- Fixed an issue in the data gathering service (do not skip `MANUAL` data source)
+
+## 1.236.0 - 2023-02-17
+
+### Changed
+
+- Beautified the ETF names in the asset profile
+- Removed the data source type `GHOSTFOLIO`
+
+### Fixed
+
+- Fixed an issue in the data gathering service (do not skip `MANUAL` data source)
+- Fixed the buying power calculation if no emergency fund is set but an activity is tagged as _Emergency Fund_
+- Fixed the url on logout during the local development
+
+## 1.235.0 - 2023-02-16
+
+### Changed
+
+- Improved the styles on the about page
+- Eliminated the `GhostfolioScraperApiService`
+
 ## 1.234.0 - 2023-02-15
 
 ### Added
@@ -718,7 +810,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Added the alias to the `Access` database schema
 - Added support for translated time distances
-- Added a _GitHub Action_ to create an `arm64` docker image
+- Added a _GitHub Action_ to create an `linux/arm64` docker image
 
 ### Changed
 
@@ -1331,7 +1423,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Beautified the ETF names in the symbol profile
+- Beautified the ETF names in the asset profile
 
 ### Fixed
 
@@ -1756,7 +1848,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Extended the historical data view in the admin control panel
-- Upgraded _Stripe_ dependencies
+- Upgraded the _Stripe_ dependencies
 - Upgraded `prisma` from version `3.7.0` to `3.8.1`
 
 ### Fixed

@@ -207,10 +207,6 @@ export class DataGatheringService {
 
   public async gatherSymbols(aSymbolsWithStartDate: IDataGatheringItem[]) {
     for (const { dataSource, date, symbol } of aSymbolsWithStartDate) {
-      if (dataSource === 'MANUAL') {
-        continue;
-      }
-
       await this.addJobToQueue(
         GATHER_HISTORICAL_MARKET_DATA_PROCESS,
         {
@@ -253,11 +249,6 @@ export class DataGatheringService {
           },
           scraperConfiguration: true,
           symbol: true
-        },
-        where: {
-          dataSource: {
-            not: 'MANUAL'
-          }
         }
       })
     ).map((symbolProfile) => {
@@ -278,7 +269,6 @@ export class DataGatheringService {
     return symbolProfiles
       .filter(({ dataSource }) => {
         return (
-          dataSource !== DataSource.GHOSTFOLIO &&
           dataSource !== DataSource.MANUAL &&
           dataSource !== DataSource.RAPID_API
         );
@@ -300,11 +290,6 @@ export class DataGatheringService {
         dataSource: true,
         scraperConfiguration: true,
         symbol: true
-      },
-      where: {
-        dataSource: {
-          not: 'MANUAL'
-        }
       }
     });
 
