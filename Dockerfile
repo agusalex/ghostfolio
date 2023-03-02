@@ -25,7 +25,6 @@ RUN yarn install
 COPY ./decorate-angular-cli.js decorate-angular-cli.js
 RUN node decorate-angular-cli.js
 
-COPY ./nx.json nx.json
 COPY ./replace.build.js replace.build.js
 COPY ./jest.preset.js jest.preset.js
 COPY ./jest.config.ts jest.config.ts
